@@ -1,0 +1,1 @@
+_null = [] execVM "briefing.sqf";
