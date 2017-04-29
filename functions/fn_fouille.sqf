@@ -34,6 +34,7 @@ _unit setVariable ["DOK_VAR_fouille_data",_this];
 		_unit = _data select 0;
 		_msg = _data select 1;
 		_markers = _data select 2;
+		_displayAll = _data select 3;
 		[_unit,_this select 2] remoteExec ["BIS_fnc_holdActionRemove",0];
 		_unit setVariable ["DOK_VAR_fouille_fouillé",false,true];
 		{_x setMarkerAlpha 1;}forEach _markers;
