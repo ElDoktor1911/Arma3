@@ -1,7 +1,7 @@
 /*
 Author : ElDoktor
 Group : Intel
-Description : Permet d'ajouter une action pour fouiller un corps à la recherche d'information et révèle des markers positionnés sur la carte. Se place dans l'init de l'objet.
+Description : Permet d'ajouter une action pour fouiller un corps à la recherche d'information et révèle des markers positionnés sur la carte. Se place dans un Game Logic ou l'init de l'objet. Si c'est un Game Logic il choisira une unité au hasard parmis les unités synchronisées à celui-ci.
 arg1 : objet
 arg2 : texte à afficher lors de la fouille
 arg3 : liste des markers à révéler après la fouille.
@@ -13,15 +13,20 @@ Syntax : [this,"Vous n'avez trouvé aucune information.",[],true] call DOK_fnc_f
 */
 if(isDedicated)exitWith{};
 
-params["_unit","_msg","_markers",["_displayAll",false]];
+params["_obj","_msg","_markers",["_displayAll",false]];
 
-_unit setVariable ["DOK_VAR_fouille_data",_this];
+_units = _obj call DOK_fnc_getUnitOrLogic;
+_unit = _units call BIS_fnc_selectRandom;
+
+TEST = _unit;
+
+_unit setVariable ["DOK_VAR_fouille_data",[_unit,_msg,_markers,_displayAll]];
 
 {_x setMarkerAlpha 0;}forEach _markers;
 
 [
 	_unit,
-	"Fouiller le corps",
+	"Fouiller",
 	"A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_connect_ca.paa",
 	"A3\Ui_f\data\IGUI\Cfg\HoldActions\holdAction_connect_ca.paa",
 	"_target getVariable ['DOK_VAR_fouille_fouillé',true]",
