@@ -11,6 +11,13 @@
 * Exemple : ajoute une stack onEachFrame du nom de TEST qui ne fait rien.
 * Syntaxes : 
 	* Syntax[1] : ["TEST","onEachFrame",{},[]] call DOK_fnc_addStackedEventHandler;
+##### DOK_fnc_headlessClientAuto
+* Groupe : Utils
+* Description : recherche le headless client s'il y en a un et lui attribut les groupes de combat. Se positionne dans un Game Logic ou l'init.sqf
+* Arguments : 
+* Exemple : L'initialisation se fait de la façon suivante
+* Syntaxes : 
+	* Syntax[1] : 0 spawn DOK_fnc_headlessClientAuto
 ##### DOK_fnc_removeStackedEventHandler
 * Groupe : Utils
 * Description : Surcouche de BIS_fnc_removeStackedEventHandler, vérifie au préalable qu'une même stack existe avant de la supprimer.

@@ -73,6 +73,10 @@ class CfgFunctions {
 
 			//Tasks
 			class taskAdd;
+
+			//Headless client
+			class headlessClientAuto;
+
 		};
 	};
 };
