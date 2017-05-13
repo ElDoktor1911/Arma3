@@ -11,6 +11,14 @@
 * Exemple : ajoute une stack onEachFrame du nom de TEST qui ne fait rien.
 * Syntaxes : 
 	* Syntax[1] : ["TEST","onEachFrame",{},[]] call DOK_fnc_addStackedEventHandler;
+##### DOK_fnc_headlessClientDisplay
+* Groupe : Utils
+* Description : affiche la répartition du contrôle des unités entre le serveur le HC et le local
+* Arguments : 
+* Exemple : L'activation et la désactivation (même commande)
+* Syntaxes : 
+	* Syntax[1] : call DOK_fnc_headlessClientDisplay //Affichage toutes les 10 secondes (par défaut)
+	* Syntax[2] : 1 call DOK_fnc_headlessClientDisplay //Affichage toutes les 1 seconde
 ##### DOK_fnc_headlessClientManager
 * Groupe : Utils
 * Description : recherche le headless client s'il y en a un et lui attribut les groupes de combat. Se positionne dans un Game Logic ou l'init.sqf
