@@ -15,8 +15,12 @@ if(_idHC == 0)exitWith{};
 if(!isServer)exitWith{};
 
 private ["_hasTrigger"];
+
+DOK_var_HEADLESSCLIENTMANAGERID = _idHC;
+publicVariable "DOK_var_HEADLESSCLIENTMANAGERID";
+
 {
-	if(side _x == east){
+	if(side _x == east)then{
 		_hasTrigger = false;
 		{
 			if(count (synchronizedWaypoints _x) > 0)then{
