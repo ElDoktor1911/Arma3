@@ -1,7 +1,10 @@
 /*
-
-Syntax : call DOK_fnc_headlessClientDisplay
-Syntax : 1 call DOK_fnc_headlessClientDisplay
+Author : ElDoktor
+Group : Utils
+Description : affiche la répartition du contrôle des unités entre le serveur le HC et le local
+Exemple : L'activation et la désactivation (même commande)
+Syntax : call DOK_fnc_headlessClientDisplay //Affichage toutes les 10 secondes (par défaut)
+Syntax : 1 call DOK_fnc_headlessClientDisplay //Affichage toutes les 1 seconde
 */
 if!(hasInterface || isServer)then{
 	DOK_HC_var_hc = 0;
@@ -35,6 +38,8 @@ _this spawn {
 
 	DOK_HC_var_start = !DOK_HC_var_start;
 
+	hintSilent "";
+
 	while{DOK_HC_var_start} do {
 		DOK_HC_var_local = 0;
 
@@ -53,7 +58,7 @@ _this spawn {
 
 		sleep 2;
 
-		hint parseText format ["Nb unités sur Serveur : %1<br/>Nb unités sur HC : %2<br/>Nb unités locales : %3",DOK_HC_var_server,DOK_HC_var_hc,DOK_HC_var_local];
+		hintSilent parseText format ["Nb unités sur Serveur : %1<br/>Nb unités sur HC : %2<br/>Nb unités locales : %3",DOK_HC_var_server,DOK_HC_var_hc,DOK_HC_var_local];
 
 		sleep _sleep;
 	};
