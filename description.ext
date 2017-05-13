@@ -75,6 +75,7 @@ class CfgFunctions {
 			class taskAdd;
 
 			//Headless client
+			class headlessClientDisplay;
 			class headlessClientManager;
 
 		};
